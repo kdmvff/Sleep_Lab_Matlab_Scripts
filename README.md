@@ -1,18 +1,14 @@
-
-
-
-# NOTE: AS OF January 16, 2020, THE DATA HAVE TO BE MOVED TO THE HTC SERVER
-# NOTE: ALL OF THE PREPEPROCESSING SCRIPTS WILL NEEED THE PATHS TO THE DATA MODIFIED.  
-
-# The purpose of this document is to explain the structure and protocol of the sleep lab Lewis Cluster Group
-
-# This document was last updated on January 16, 2020
+# PURPOSE: TO DOCUMENT THE PROCESSING STEPS OF NEUROIMAGING DATA FOR THE SLEEP LAB
 
 # Author(s): Kevin McGovney, Jason Craggs 
+#  MODIFIED:  2020_01_20
+
+
+# NOTE: AS OF January 20, 2020 THE DATA HAVE BEEN MOVED TO THE HTC SERVER
+# NOTE: ALL OF THE PREPEPROCESSING SCRIPTS WILL NEEED THE PATHS TO THE DATA MODIFIED.  
 
 # The sleep lab group has the following major directories: raw, preprocessing, preprocessed, software, and Psychometric.
 
-# For the sleep lab, the primary purpose of the Lewis cluster is to store and process MRI data
 
 # RAW
 
