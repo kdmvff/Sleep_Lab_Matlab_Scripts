@@ -14,11 +14,8 @@ The sleep lab group has the following major directories: raw, preprocessing, pre
 ## RAW
 
 * This directory contains all of the raw MRI files for SPIN2 and SPINCWP. Every participant visit has a unique folder (i.e. if the participant had multiple visits, they will have a folder for each visit). Every visit folder contains the MRI and thermal data for that visit. The MRI data is in DICOM format, and the thermal data is in an excel file.
-
 * We export MRI files as enhanced DICOM files, and we need to ensure that they are not deidentified
-
 * The naming convention for SPIN2 is SPIN2_xxx_V1
-
 * The naming convention for SPINCWP is SPxxx_Visit_1
 
 ## PREPROCESSING
