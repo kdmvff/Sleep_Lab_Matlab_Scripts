@@ -3,11 +3,12 @@
 %%
 %       CREATED BY:     JOCHEN WEBER
 %       CREATED ON:     11/22/16
-%
-%       MODIFIED BY:    JASON CRAGGS
-%      LATEST MODIFICATION:     2019_09_05 (modifying for McCrae study)
-%
 %       USAGE:          STEP 2: PREPROCESS CHRISTINA'S R01 DATA
+%       
+%       MODIFIED BY:    JASON CRAGGS
+%       MODIFIED:       2020_01_20
+%
+%      
 %       MODIFIED TO:    JASON IS PREPROCESSING ADDITIONAL SUBJECTS
 %                       WHICH REQUIRES THAT THEY BE IN A DIFFERENT FOLDER
 %
@@ -20,23 +21,17 @@ end
 % initialize SPM defaults and job manager
 % spm12path = '/cluster/folder/craggs/software/spm12';
 %spm12path = '/Users/jcraggs/Applications/spm12';
-spm12path = '/storage/hpc/group/sleeplab/software/spm12';
+spm12path = '/storage/htc/sleeplab/software/spm12';
 spm('defaults','FMRI');
 spm_jobman('initcfg');
 clear matlabbatch;
 
 % configure root path and subject pattern, as well as file patterns
-%rootpath = '/cluster/folder/craggs/study/preprocessed/';
-%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/';
-%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason/';
-%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason_0/';
-%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason_step1/';
-rootpath = '/storage/hpc/group/sleeplab/preprocessing/';
+rootpath = '/storage/htc/sleeplab/preprocessing/';
 subpattern = 'SPIN2*';
 anatpattern = 'SPIN2_*_t1.nii';
 funcpattern = 'SPIN2_*_V*_*_run*.nii';
-%anatpattern = 'T1_*.nii';
-%funcpattern = 'RSrun*.nii';
+
 numruns = 5;
 
 % set variables, number of volumes and functional slices, TR
@@ -304,3 +299,14 @@ for sc = 1:numel(subjlist)
     spm_jobman('run', matlabbatch);
     clear matlabbatch;
 end
+
+
+
+%rootpath = '/cluster/folder/craggs/study/preprocessed/';
+%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/';
+%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason/';
+%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason_0/';
+%rootpath = '/Volumes/Data/Imaging/R01/preprocessed/_Jason_step1/';
+
+%anatpattern = 'T1_*.nii';
+%funcpattern = 'RSrun*.nii';
