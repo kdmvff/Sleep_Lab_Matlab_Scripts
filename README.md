@@ -21,58 +21,36 @@ The sleep lab group has the following major directories: raw, preprocessing, pre
 ## PREPROCESSING
 
 * This directory contains all of the MRI files that have additional pre-processing steps to be performed. Once all pre-processing steps are performed on an MRI file, the participant folder should be moved to PREPROCESSED.
-
 * Every MRI file in this directory should be a .nii. The first script (see PSYCHOMETRIC folder) converts the raw DICOM MRI data to compressed niifti files (.nii.gz). 
-
 * If the dicom2niix script worked correctly, a folder will be created for each participant that contains the following example files: SPIN2_359_gre_field_mapping_s11_ph.nii.gz, SPIN2_359_SAG_T2_SPACE_s03.nii.gz, SPIN2_359_V1_p_run1.nii.gz,  SPIN2_359_V1_p_run2.nii.gz, SPIN2_359_V1_p_run3.nii.gz, SPIN2_359_V1_r_run1.nii.gz, SPIN2_359_V1_r_run2.nii.gz, SPIN2_359_V1_t1.nii.gz
-
 * If the dicom2niix script did not work successfully, then these files will not appear as shown above. They may appear as DEIDENTIFIED, in which case they need to re-exported immediately from Radiology.
 
-
 ## PREPROCESSED
-
 * This folder contains all of the MRI files from the visits that have gone through the entirety of the preprocessing steps.
 
-
 ## PSYCHOMETRIC
-
 * This directory contains all of the scripts required to process the data.
-
 * The scripts will be in the subfolder "AUTOMATED PROCESSING"
 
 ## SPIN2 SCRIPTS
-
 * Basic order of scripts: "convert_dicom.sh", "Mc_step2_preprocessing.m", "Mc_step2_2_maxvals.m", "Mc_step3_norm123.m".
 
 
 ### SCRIPT 1
-
 * Name: "convert_dicom.sh"
-
 * Description: This script takes a raw DICOM file in the RAW folder, converts it to .nii format, compresses the file, and places the .nii files in a new folder in PREPROCESING
-
 * The script can be ran from any directory with the absolute path name, followed by the SPIN2 ID, the visit #, and the treatment assignment.
-
 * Note, the treatment assignment can be re-specified later, so it is not essential to include in the script.
-
 * The script will assume that the visit is V1 if not otherwise specified, and it will assume an unknown treatment assignment
-
-* Command: "/storage/hpc/group/sleeplab/Psychometric/automated_processing/convert_dicom.sh SPIN2_xxx V2"
-
+* Command: "/storage/htc/sleeplab/Psychometric/automated_processing/convert_dicom.sh SPIN2_xxx V2"
 * The above command runs the 1st script on SPIN2_xxx in RAW, and specifies the visit as visit 2
 
-
 ### SCRIPT 2
-
 * Open MATLAB to run the following commands
-
 * To obtain a MATLAB license on lewis, run the following command:
 * "srun --pty -p Interactive -c2 --mem 8G --time=4:00:00 --licenses=matlab:1 /bin/bash"
-
 * Open MATLAB with the following command: "module load matlab/matlab-R2018b;matlab"
-
 * Navigate to the directory of the automated processing folder in MATLAB
-
 *  enter "Mc_step2_preprocessing.m", and allow it to run through all of the steps. If there is an error, then there is likely a problem with the .nii file or its name
 
 #### This script does
@@ -109,6 +87,7 @@ The sleep lab group has the following major directories: raw, preprocessing, pre
 - coregisters the functional to the T1 (this is done so the anat file can be overlaid on the functional files)
 - normalizes the epi data to MNI
 - smooth the epi data (FWHM 6mm)
+
 ####### END OF SCRIPT
 
 
