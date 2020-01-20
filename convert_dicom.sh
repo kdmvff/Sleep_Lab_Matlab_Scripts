@@ -10,6 +10,7 @@
 #  	MODIFIED ON:		2017_12_06
 #       MODIFIED ON:		2019_02_20    BY Ashley Curtis (and friends)
 #       MODIFIED ON:            2019-08-09
+#       MODIFIED:   2020_01_20
 #       Usage:			1_convert_dicom.sh [subject] [visit] [condition]
 #
 ###############################
@@ -39,15 +40,15 @@ fi
 # load pigz
 module load pigz/pigz-2.4
 
-dicomData=/storage/hpc/group/sleeplab/raw/${sub}_${visit}/
-niixOutput=/storage/hpc/group/sleeplab/preprocessing/${sub}_${visit}_${cond}/
+dicomData=/storage/htc/sleeplab/raw/${sub}_${visit}/
+niixOutput=/storage/htc/sleeplab/preprocessing/${sub}_${visit}_${cond}/
 
 #Create the desired output folder
 mkdir $niixOutput
 
 #Converts the Dicom to Nifti
 # %p=protocol %s=series number
-/storage/hpc/group/sleeplab/software/dcm2niix-1.0.20181125/bin/dcm2niix -b y -z y -o ${niixOutput} -f ${sub}_%p_s%2s ${dicomData}
+/storage/htc/sleeplab/software/dcm2niix-1.0.20181125/bin/dcm2niix -b y -z y -o ${niixOutput} -f ${sub}_%p_s%2s ${dicomData}
 
 echo ${dicomData}
 echo ${niixOutput}
