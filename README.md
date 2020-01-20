@@ -1,72 +1,70 @@
 # PURPOSE: TO DOCUMENT THE PROCESSING STEPS OF NEUROIMAGING DATA FOR THE SLEEP LAB
 
-# Author(s): Kevin McGovney, Jason Craggs 
-#  MODIFIED:  2020_01_20
 
 
-# NOTE: AS OF January 20, 2020 THE DATA HAVE BEEN MOVED TO THE HTC SERVER
-# NOTE: ALL OF THE PREPEPROCESSING SCRIPTS WILL NEEED THE PATHS TO THE DATA MODIFIED.  
 
-# The sleep lab group has the following major directories: raw, preprocessing, preprocessed, software, and Psychometric.
+Author(s): Kevin McGovney, Jason Craggs 
+MODIFIED:  2020_01_20
+
+
+NOTE: AS OF January 20, 2020 THE DATA HAVE BEEN MOVED TO THE HTC SERVER
+NOTE: ALL OF THE PREPEPROCESSING SCRIPTS WILL NEEED THE PATHS TO THE DATA MODIFIED.  
+
+The sleep lab group has the following major directories: raw, preprocessing, preprocessed, software, and Psychometric.
 
 
 # RAW
 
-# This directory contains all of the raw MRI files for SPIN2 and SPINCWP. Every participant visit has a unique folder (i.e. if the participant had multiple visits, they will have a folder for each visit). Every visit folder contains the MRI and thermal data for that visit. The MRI data is in DICOM format, and the thermal data is in an excel file.
+This directory contains all of the raw MRI files for SPIN2 and SPINCWP. Every participant visit has a unique folder (i.e. if the participant had multiple visits, they will have a folder for each visit). Every visit folder contains the MRI and thermal data for that visit. The MRI data is in DICOM format, and the thermal data is in an excel file.
 
-# We export MRI files as enhanced DICOM files, and we need to ensure that they are not deidentified
+We export MRI files as enhanced DICOM files, and we need to ensure that they are not deidentified
 
-# The naming convention for SPIN2 is SPIN2_xxx_V1
+The naming convention for SPIN2 is SPIN2_xxx_V1
 
-# The naming convention for SPINCWP is SPxxx_Visit_1
+The naming convention for SPINCWP is SPxxx_Visit_1
 
 # PREPROCESSING
 
-# This directory contains all of the MRI files that have additional pre-processing steps to be performed. Once all pre-processing steps are performed on an MRI file, the participant folder should be moved to PREPROCESSED.
+This directory contains all of the MRI files that have additional pre-processing steps to be performed. Once all pre-processing steps are performed on an MRI file, the participant folder should be moved to PREPROCESSED.
 
-# Every MRI file in this directory should be a .nii. The first script (see PSYCHOMETRIC folder) converts the raw DICOM MRI data to compressed niifti files (.nii.gz). 
+Every MRI file in this directory should be a .nii. The first script (see PSYCHOMETRIC folder) converts the raw DICOM MRI data to compressed niifti files (.nii.gz). 
 
-# If the dicom2niix script worked correctly, a folder will be created for each participant that contains the following example files: SPIN2_359_gre_field_mapping_s11_ph.nii.gz, SPIN2_359_SAG_T2_SPACE_s03.nii.gz, SPIN2_359_V1_p_run1.nii.gz,  SPIN2_359_V1_p_run2.nii.gz, SPIN2_359_V1_p_run3.nii.gz, SPIN2_359_V1_r_run1.nii.gz, SPIN2_359_V1_r_run2.nii.gz, SPIN2_359_V1_t1.nii.gz
+If the dicom2niix script worked correctly, a folder will be created for each participant that contains the following example files: SPIN2_359_gre_field_mapping_s11_ph.nii.gz, SPIN2_359_SAG_T2_SPACE_s03.nii.gz, SPIN2_359_V1_p_run1.nii.gz,  SPIN2_359_V1_p_run2.nii.gz, SPIN2_359_V1_p_run3.nii.gz, SPIN2_359_V1_r_run1.nii.gz, SPIN2_359_V1_r_run2.nii.gz, SPIN2_359_V1_t1.nii.gz
 
-# If the dicom2niix script did not work successfully, then these files will not appear as shown above. They may appear as DEIDENTIFIED, in which case they need to re-exported immediately from Radiology.
-
-
-
+If the dicom2niix script did not work successfully, then these files will not appear as shown above. They may appear as DEIDENTIFIED, in which case they need to re-exported immediately from Radiology.
 
 
 # PREPROCESSED
 
-# This folder contains all of the MRI files from the visits that have gone through the entirety of the preprocessing steps.
-
-
+This folder contains all of the MRI files from the visits that have gone through the entirety of the preprocessing steps.
 
 
 # PSYCHOMETRIC
 
-# This directory contains all of the scripts required to process the data.
+This directory contains all of the scripts required to process the data.
 
-# The scripts will be in the subfolder "AUTOMATED PROCESSING"
+The scripts will be in the subfolder "AUTOMATED PROCESSING"
 
-# SPIN2 SCRIPTS
+##SPIN2 SCRIPTS
 
-# Basic order of scripts: "convert_dicom.sh", "Mc_step2_preprocessing.m", "Mc_step2_2_maxvals.m", "Mc_step3_norm123.m".
+Basic order of scripts: "convert_dicom.sh", "Mc_step2_preprocessing.m", "Mc_step2_2_maxvals.m", "Mc_step3_norm123.m".
 
 
-# SCRIPT 1
+## SCRIPT 1
 
-# Name: "convert_dicom.sh"
+* Name: "convert_dicom.sh"
 
-# Description: This script takes a raw DICOM file in the RAW folder, converts it to .nii format, compresses the file, and places the .nii files in a new folder in PREPROCESING
+* Description: This script takes a raw DICOM file in the RAW folder, converts it to .nii format, compresses the file, and places the .nii files in a new folder in PREPROCESING
 
-# The script can be ran from any directory with the absolute path name, followed by the SPIN2 ID, the visit #, and the treatment assignment.
+* The script can be ran from any directory with the absolute path name, followed by the SPIN2 ID, the visit #, and the treatment assignment.
 
-# Note, the treatment assignment can be re-specified later, so it is not essential to include in the script.
+* Note, the treatment assignment can be re-specified later, so it is not essential to include in the script.
 
-# The script will assume that the visit is V1 if not otherwise specified, and it will assume an unknown treatment assignment
+* The script will assume that the visit is V1 if not otherwise specified, and it will assume an unknown treatment assignment
 
-# Command: "/storage/hpc/group/sleeplab/Psychometric/automated_processing/convert_dicom.sh SPIN2_xxx V2"
+* Command: "/storage/hpc/group/sleeplab/Psychometric/automated_processing/convert_dicom.sh SPIN2_xxx V2"
 
-# The above command runs the 1st script on SPIN2_xxx in RAW, and specifies the visit as visit 2
+* The above command runs the 1st script on SPIN2_xxx in RAW, and specifies the visit as visit 2
 
 
 # SCRIPT 2
