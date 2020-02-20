@@ -97,17 +97,17 @@ The sleep lab group has the following major directories: raw, preprocessing, pre
 NOTE: This script was used prior to the Atlanta trip to identify excessive motion  
 NOTE: After the Atlanta trip we will use the ART toolbox (as of January 16, 2020 = WIP)
 
-# Description: Determines the maximum value of motion for all 5 functional scans. Must be ran 1 participant visit at a time.
+Description: Determines the maximum value of motion for all 5 functional scans. Must be ran 1 participant visit at a time.
 
-# We want to determine the maximum values of motion for all motion parameters (x, y, z, pitch, roll, yaw) for every functional scan. 
+We want to determine the maximum values of motion for all motion parameters (x, y, z, pitch, roll, yaw) for every functional scan. 
 
-# This script is a little clunky, and could be made simpler by specifying particpant ID as a variable in MATLAB
+This script is a little clunky, and could be made simpler by specifying particpant ID as a variable in MATLAB
 
-# Open the script "Mc_step2_2_maxvals.m", and change the participant ID and visit to the desired participant every time the participant ID appears in the script.
+Open the script "Mc_step2_2_maxvals.m", and change the participant ID and visit to the desired participant every time the participant ID appears in the script.
 
-# The script should produce the maximum value of motion for x, y, z, pitch, roll, and yaw for each of the 5 functional scans.
+The script should produce the maximum value of motion for x, y, z, pitch, roll, and yaw for each of the 5 functional scans.
 
-# If motion for any paramter exceeds 3, then flag this ID and wait to run additional analyses.
+If motion for any paramter exceeds 3, then flag this ID and wait to run additional analyses.
 
 
 
@@ -154,8 +154,8 @@ As of February 20, 2020
 Kevin has gotten an initial GIFT batch script to run. This is located...
 ## From the GIFT manual
 3.16 OUTPUT FILES NAMING
-• Parameter file-File used for storing parameters before and after the analysis. _ica_parameter_info.mat is the suffix used for parameter file.
-• Reduction step file - After PCA, the information is stored in a MAT file. _pca_r is the suffix used for reduction files.
+* Parameter file-File used for storing parameters before and after the analysis. _ica_parameter_info.mat is the suffix used for parameter file.
+* Reduction step file - After PCA, the information is stored in a MAT file. _pca_r is the suffix used for reduction files.
 • ICA step file - After ICA, the information is stored in a MAT file with the suffix _ica. The aggregate images are written in Analyze or Nifti format with the suffix _agg__component_ica_.
 • Back reconstruction step file - After back reconstruction step, the information is stored in a MAT file with the suffix _ica_br.
 • Calibrate step file - After scaling, the information is stored in a MAT file with the suffix_ica_c.
