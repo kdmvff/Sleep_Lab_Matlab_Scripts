@@ -2,7 +2,7 @@
 
 
 Author(s): Kevin McGovney, Jason Craggs 
-MODIFIED:  2020_01_20
+MODIFIED:  2020_02_20
 
 
 NOTE: AS OF January 20, 2020 THE DATA HAVE BEEN MOVED TO THE HTC SERVER
@@ -113,8 +113,8 @@ NOTE: After the Atlanta trip we will use the ART toolbox (as of January 16, 2020
 
 # SCRIPT 4
 
-# Description: Normalizes all of the files in PREPROCESSING
-# In matlab, navigate to the automated processing directory and run " Mc_step3_norm123.m"
+Description: Normalizes all of the files in PREPROCESSING
+In matlab, navigate to the automated processing directory and run " Mc_step3_norm123.m"
 
 
 
@@ -122,32 +122,60 @@ NOTE: After the Atlanta trip we will use the ART toolbox (as of January 16, 2020
 
 # SOFTWARE
 
-# This folder contains all of the dependencies for software. It contains the toolboxes for Matlab. If a new toolbox is added to SOFTWARE, it must also be added to the PATH in Matlab in order to use the toolbox.
+This folder contains all of the dependencies for software. It contains the toolboxes for Matlab. If a new toolbox is added to SOFTWARE, it must also be added to the PATH in Matlab in order to use the toolbox.
 
 
 # THERMAL DATA (PROCESSING)
 
-# The thermal data exists in RAW. There should be 3 files for each participant (1 for each functional pain scan)
+The thermal data exists in RAW. There should be 3 files for each participant (1 for each functional pain scan)
 
-# It is necessary to determine the timestamp of each initial stimulus for each pain run (there are 16 initial stimuli for each pain run).
+It is necessary to determine the timestamp of each initial stimulus for each pain run (there are 16 initial stimuli for each pain run).
 
-# Initial stimuli is defined as the time in miliseconds from the start of the scan when the temperature first reaches the destination tempe
-# rature. Again, this happens 16 times each scan.
+Initial stimuli is defined as the time in miliseconds from the start of the scan when the temperature first reaches the destination temperature. Again, this happens 16 times each scan.
 
-# We also want to determine the duration of each stimulus (i.e. for how long did the participant experience each stimulus?)
+We also want to determine the duration of each stimulus (i.e. for how long did the participant experience each stimulus?)
 
-# The duration of each stimulus should be approximately 5 seconds
+The duration of each stimulus should be approximately 5 seconds
 
-# An excel sheet with a macro is created and exists in PREPROCESSED/SPIN2_thermal
+An excel sheet with a macro is created and exists in PREPROCESSED/SPIN2_thermal
 
-# The macro is able to determine the initial stimuli and duration of each of these files 1 at a time.
+The macro is able to determine the initial stimuli and duration of each of these files 1 at a time.
 
-# The macro is in sheet 1 of the excel sheet, and the instructions for the macro are in sheet 2 of the excel sheet.
+The macro is in sheet 1 of the excel sheet, and the instructions for the macro are in sheet 2 of the excel sheet.
 
-# The timestamped initial stimuli and duration of scan are then pasted into wide format in PREPROCESSED/SPIN2_thermal/Thermal_inital_stimul
-# i.xlsx
+ The timestamped initial stimuli and duration of scan are then pasted into wide format in PREPROCESSED/SPIN2_thermal/Thermal_inital_stimuli.xlsx
 
-# In the file with timestamps, b_p1_1 is an abbreviation for baseline, pain 1 , stimulus 1
+In the file with timestamps, b_p1_1 is an abbreviation for baseline, pain 1 , stimulus 1
 
-# Similary p_p2_6 would be post, pain 2, stimulus 6,
+Similary p_p2_6 would be post, pain 2, stimulus 6,
+
+# GIFT PROCESSING
+As of February 20, 2020
+Kevin has gotten an initial GIFT batch script to run. This is located...
+## From the GIFT manual
+3.16 OUTPUT FILES NAMING
+• Parameter file-File used for storing parameters before and after the analysis. _ica_parameter_info.mat is the suffix used for parameter file.
+• Reduction step file - After PCA, the information is stored in a MAT file. _pca_r is the suffix used for reduction files.
+• ICA step file - After ICA, the information is stored in a MAT file with the suffix _ica. The aggregate images are written in Analyze or Nifti format with the suffix _agg__component_ica_.
+• Back reconstruction step file - After back reconstruction step, the information is stored in a MAT file with the suffix _ica_br.
+• Calibrate step file - After scaling, the information is stored in a MAT file with the suffix_ica_c.
+• Component map file - Component maps are stored with the suffix _component_ica_ in Analyze or Nifti format. Subject component maps are stored as *sub*component_ica*nii.
+• Component time course file - Component time course for a particular data - set is stored with the suffix _timecourses_ica_ in Analyze or Nifti format.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
