@@ -156,11 +156,11 @@ Kevin has gotten an initial GIFT batch script to run. This is located...
 3.16 OUTPUT FILES NAMING
 * Parameter file-File used for storing parameters before and after the analysis. _ica_parameter_info.mat is the suffix used for parameter file.
 * Reduction step file - After PCA, the information is stored in a MAT file. _pca_r is the suffix used for reduction files.
-• ICA step file - After ICA, the information is stored in a MAT file with the suffix _ica. The aggregate images are written in Analyze or Nifti format with the suffix _agg__component_ica_.
-• Back reconstruction step file - After back reconstruction step, the information is stored in a MAT file with the suffix _ica_br.
-• Calibrate step file - After scaling, the information is stored in a MAT file with the suffix_ica_c.
-• Component map file - Component maps are stored with the suffix _component_ica_ in Analyze or Nifti format. Subject component maps are stored as *sub*component_ica*nii.
-• Component time course file - Component time course for a particular data - set is stored with the suffix _timecourses_ica_ in Analyze or Nifti format.
+* ICA step file - After ICA, the information is stored in a MAT file with the suffix _ica. The aggregate images are written in Analyze or Nifti format with the suffix _agg__component_ica_.
+* Back reconstruction step file - After back reconstruction step, the information is stored in a MAT file with the suffix _ica_br.
+* Calibrate step file - After scaling, the information is stored in a MAT file with the suffix_ica_c.
+* Component map file - Component maps are stored with the suffix _component_ica_ in Analyze or Nifti format. Subject component maps are stored as *sub*component_ica*nii.
+* Component time course file - Component time course for a particular data - set is stored with the suffix _timecourses_ica_ in Analyze or Nifti format.
 
 
 
