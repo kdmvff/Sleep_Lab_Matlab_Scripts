@@ -123,17 +123,25 @@ numOfSess = 1;
 % You can provide the file numbers ([1:220]) to include as a vector. If you want to
 % select all the files then leave empty.
 
-s1_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub01_vis', 'nsrstim*.img', (1:220)}; % subject 1 session 1
+%s1_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub01_vis', 'nsrstim*.img', (1:220)}; % subject 1 session 1
+%s2_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub02_vis', 'ns*.img', (1:220)}; % subject 2 session 1
+%s3_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub03_vis', 'nsr*.img', (1:220)}; % subject 3 session 1
 
-s2_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub02_vis', 'ns*.img', (1:220)}; % subject 2 session 1
+s1_s1 = {'/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/sub01_vis', 'nsrstim*.img', (1:220)}; % subject 1 session 1
+s2_s1 = {'/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/sub02_vis', 'nsrstim*.img', (1:220)}; % subject 1 session 1
+s3_s1 = {'/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/sub03_vis', 'nsrstim*.img', (1:220)}; % subject 1 session 1
 
-s3_s1 = {'/storage/htc/sleeplab/software/mind/data/visuomotor/sub03_vis', 'nsr*.img', (1:220)}; % subject 3 session 1
+
 
 % specify design matrix for each subject here if you selected 'diff_sub_diff_sess' under 
 % keyword_designMatrix variable for Method 2
-s1_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 1 design matrix
-s2_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 2 design matrix
-s3_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 3 design matrix
+%s1_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 1 design matrix
+%s2_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 2 design matrix
+%s3_designMat = 'C:\MATLAB6p5p2\work\Example Subjects\Visuomotor_data\SPM.mat'; % subject 3 design matrix
+
+s1_designMat = '/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/SPM.mat'; % subject 1 design matrix
+s2_designMat = '/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/SPM.mat'; % subject 2 design matrix
+s3_designMat = '/Users/jcraggs/LocalDocs/McCrae/GIFTtest/visuomotor/SPM.mat'; % subject 3 design matrix
 
 %%%%%%%%%%%%%%%%%%%%%%% end for Method 2 %%%%%%%%%%%%%%
 
