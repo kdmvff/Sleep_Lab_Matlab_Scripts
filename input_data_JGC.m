@@ -1,3 +1,10 @@
+%
+%		MODIFIED:		2020_02_27
+%		MODIFIED BY:	Jason Craggs
+%
+%	NOTE: WE NEED TO ADD THE OTHER SESSIONS TO THIS SCRIPT FOR A BETTER UNDERSTANDING 
+%		OF THE RESULTS
+%
 % Enter the values for the variables required for the ICA analysis.
 % Variables are on the left and the values are on the right.
 % Characters must be enterd in single quotes
